@@ -1,0 +1,37 @@
+{
+  "name": "eslint-plugin-private-props",
+  "version": "0.0.0",
+  "description": "Assume all properties/methods that begin with an underscore are private and generate errors for unused or undeclared properties.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "private properties",
+    "private"
+  ],
+  "author": "Warren Ouyang",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha test --recursive --watch",
+    "test-debug": "node-debug ./node_modules/mocha/bin/_mocha test --recursive --watch",
+    "release": "node_modules/.bin/npm-release"
+  },
+  "peerDependencies": {
+    "babel-eslint": "^6.0.0",
+    "eslint": "^2.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.0.0",
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "eslint": "^2.6.0",
+    "mocha": "^2.5.3",
+    "npm-release": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "license": "ISC"
+}
