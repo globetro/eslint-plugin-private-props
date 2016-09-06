@@ -103,6 +103,22 @@ ruleTester.run('for-class', rule, {
         message: Messages.UNDECLARED,
         type: 'VariableDeclarator'
       }]
+    },
+
+    {
+      code: `
+        class Foo {
+          privRender() {
+          }
+        }
+      `,
+      options: [{
+        'privateMethodMatchers': ['^priv[A-Z]']
+      }],
+      errors: [{
+        message: Messages.UNUSED,
+        type: 'MethodDefinition'
+      }]
     }
   ]
 });
