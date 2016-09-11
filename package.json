@@ -30,6 +30,9 @@
     "mocha": "^2.5.3",
     "npm-release": "^1.0.0"
   },
+  "directories": {
+    "lib": "./lib"
+  },
   "engines": {
     "node": ">=4.0.0"
   },
