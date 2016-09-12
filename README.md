@@ -57,7 +57,7 @@ Default:
     "private-props/all": [2, {
       "privateMatchers": [
         "^_", 
-        "^handle[A-Z]""
+        "^handle[A-Z]"
       ]
     }]
   }
