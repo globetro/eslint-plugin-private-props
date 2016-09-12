@@ -1,6 +1,6 @@
 # eslint-plugin-private-props
 
-Assume all properties/methods that begin with an underscore are private and generate errors for unused or undeclared properties.
+Assume all properties/methods that begin with an underscore and the `handle` prefix (specific case for React components) are private and generate errors for unused or undeclared properties.
 
 ## Installation
 
@@ -36,15 +36,29 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "private-props/for-class": 2
+    "private-props/all": 2
   }
 }
 ```
 
 ## Supported Rules
 
-### `private-props/for-class`
-Enable support for ES6 classes
+### `private-props/all`
+Enable support for ES6 classes, React.createClass, and prototypical inheritance
 
-### `private-props/for-react-create-class`
-Enable support for React.createClass
+#### Options
+`privateMatchers` Change the default set of matchers for private properties
+
+Default:
+
+```json
+{
+  "rules": {
+    "private-props/all": [2, {
+      "privateMatchers": [
+        "^_", 
+        "^handle[A-Z]""
+      ]
+    }]
+  }
+}
