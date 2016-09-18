@@ -59,6 +59,17 @@ ruleTester.run('all', rule, {
           )
         }
       })
+    `,
+    `
+      React.createClass({         
+        handleThis: function() {
+        },
+        render() {
+          return (
+            <div onClick={this.handleThis.bind(this)}/>
+          )
+        }
+      })
     `
   ],
 
@@ -86,7 +97,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNUSED, '_foo'),
-        type: 'AssignmentExpression'
+        type: 'Identifier'
       }]
     },
 
@@ -100,7 +111,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, '_bar'),
-        type: 'MemberExpression'
+        type: 'Identifier'
       }]
     },
 
@@ -114,7 +125,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, '_bar'),
-        type: 'VariableDeclarator'
+        type: 'Identifier'
       }]
     },
 
@@ -130,7 +141,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, 'handleThis'),
-        type: 'MemberExpression'
+        type: 'Identifier'
       }]
     }
   ]
