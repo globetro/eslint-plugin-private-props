@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-private-props",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Assume all properties/methods that begin with an underscore are private and generate errors for unused or undeclared properties.",
   "repository": "https://github.com/globetro/eslint-plugin-private-props",
   "keywords": [
