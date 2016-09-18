@@ -86,7 +86,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNUSED, '_unused'),
-        type: 'AssignmentExpression'
+        type: 'Identifier'
       }]
     },
 
@@ -100,7 +100,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, '_bam'),
-        type: 'MemberExpression'
+        type: 'Identifier'
       }]
     },
 
@@ -114,7 +114,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, '_bam'),
-        type: 'VariableDeclarator'
+        type: 'Identifier'
       }]
     },
 
@@ -146,7 +146,7 @@ ruleTester.run('all', rule, {
       `,
       errors: [{
         message: Messages.get(Messages.UNDECLARED, 'handleThis'),
-        type: 'MemberExpression'
+        type: 'Identifier'
       }]
     }
   ]
