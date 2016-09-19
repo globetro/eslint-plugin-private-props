@@ -1,6 +1,6 @@
 # eslint-plugin-private-props
 
-Assume all properties/methods that begin with an underscore and the `handle` prefix (specific case for React components) are private and generate errors for unused or undeclared properties.
+Assume all properties that begin with an underscore and the `handle` prefix (specific case for React components) are private and generate errors for unused or undeclared properties.
 
 ## Installation
 
@@ -46,8 +46,28 @@ Then configure the rules you want to use under the rules section.
 ### `private-props/no-unused-or-undeclared`
 Disallow unused or undeclared private properties
 
+Example:
+
+```javascript
+class Foo {
+  _init() { // Error: `_init` is unused
+    console.log('init');
+  }
+
+  bar() {
+    this._foo = 1; // Error: `_foo` is unused
+    this._baz(); // Error: `_baz` is undefined
+  }
+}
+```
+
 ### `private-props/no-use-outside`
 Disallow use of private properties outside of own object
+
+```javascript
+this._bar(); // ok
+foo._bar(); // Error: `_bar` is used outside of own object
+```
 
 #### Options
 `privateMatchers` Change the default set of matchers for private properties
