@@ -46,6 +46,13 @@ ruleTester.run('all', rule, {
           )
         }
       }
+    `,
+    `
+      class Foo {
+        render() {
+          bar._bam();
+        }
+      }
     `
   ],
 
