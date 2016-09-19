@@ -1,6 +1,6 @@
 'use strict';
 
-var rule = require('../../../lib/rules/all');
+var rule = require('../../../lib/rules/no-unused-or-undeclared');
 var Messages = require('../../../lib/messages');
 var RuleTester = require('eslint').RuleTester;
 
@@ -16,7 +16,7 @@ RuleTester.setDefaultConfig({
 
 
 var ruleTester = new RuleTester();
-ruleTester.run('all', rule, {
+ruleTester.run('no-unused-or-undeclared', rule, {
 
   valid: [
     `

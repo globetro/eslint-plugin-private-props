@@ -36,15 +36,18 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "private-props/all": 2
+    "private-props/no-unused-or-undeclared": 2
   }
 }
 ```
 
 ## Supported Rules
 
-### `private-props/all`
-Enable support for ES6 classes, React.createClass, and prototypical inheritance
+### `private-props/no-unused-or-undeclared`
+Disallow unused or undeclared private properties
+
+### `private-props/no-use-outside`
+Disallow use of private properties outside of own object
 
 #### Options
 `privateMatchers` Change the default set of matchers for private properties
@@ -54,7 +57,7 @@ Default:
 ```json
 {
   "rules": {
-    "private-props/all": [2, {
+    "private-props/no-unused-or-undeclared": [2, {
       "privateMatchers": [
         "^_", 
         "^handle[A-Z]"
